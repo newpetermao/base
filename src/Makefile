@@ -33,6 +33,9 @@ $(BASE_LIB) : $(BASEOBJ)
 %.o : %.cc
 	$(CC) $< -o $@ -c $(CFLAGS) $(INCS)
 
+%.o : %.c
+	$(CC) $< -o $@ -c $(CFLAGS) $(INCS)
+
 test : $(BASE_LIB)
 	$(CC) -c ../test/unittest.cc  -o ../test/unittest.o -I$(GTESTINC) -I./
 	$(CC) -o ../test/unittest \
