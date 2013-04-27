@@ -81,8 +81,8 @@ int Config::Init(const std::string sFileName) {
 }
 
 int Config::Get(const std::string sSection,
-                    const std::string sKey,
-                    std::string* sVal) {
+                const std::string sKey,
+                std::string* sVal) {
   std::map<std::string, std::string>::const_iterator iterKey;
   typedef std::map<std::string, std::string> sec_map;
   std::map<std::string, sec_map>::const_iterator iterSec;
@@ -119,6 +119,9 @@ void Config::Trim(std::string* str) {
 
   if (pos > 0)
     str->erase(0, pos);
+
+  if (0 == str->length())
+    return;
 
   pos = str->length() - 1;
   while (pos >= 0) {
