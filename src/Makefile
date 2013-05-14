@@ -17,7 +17,7 @@ LDFLAGS = \
   -lm -lpthread -lz
 
 BASEOBJ= \
-  config.o
+  config.o skip_list.o
 
 BASE_LIB= ../bin/libbase.a
 TARGET= $(BASE_LIB)
