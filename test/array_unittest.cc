@@ -38,7 +38,6 @@ TEST(Test_arrayGet, Test_Success) {
   val = (int *)arrayGet(arr, 0);
   EXPECT_NE((int *)(NULL), val);
   EXPECT_EQ(100, *val);
-  free(val);
   arrayFree(arr);
 }
 
@@ -54,7 +53,6 @@ TEST(Test_arraySet, Test_ParamInvalid) {
   arrayPush(arr, val);
   EXPECT_EQ((void *)(NULL), arraySet(arr, -10, val));
   EXPECT_EQ((void *)(NULL), arraySet(arr, 10, val));
-  free(val);
   arrayFree(arr);
 }
 
@@ -69,7 +67,6 @@ TEST(Test_arraySet, Test_Success) {
   arrayPush(arr, val);
   orig_val = (int *)arraySet(arr, 0, val);
   EXPECT_NE((int *)(NULL), orig_val);
-  free(val);
   arrayFree(arr);
 }
 
