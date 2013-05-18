@@ -6,6 +6,10 @@
 #include <stdlib.h>
 #include "./array.h"
 
+static inline void _free(void* val) {
+  free(val);
+}
+
 array_t* arrayInit(size_t size) {
   array_t* arr = NULL;
 
@@ -18,7 +22,7 @@ array_t* arrayInit(size_t size) {
 
   arr->size = 0;
   arr->capacity = size;
-  arr->free = NULL;
+  arr->free = _free;
   arr->a = (void **)malloc(arr->capacity * sizeof(void *));
   if (NULL == arr->a) {
     free(arr);
@@ -35,7 +39,7 @@ void arrayFree(array_t* arr) {
     return;
 
   if (arr->free) {
-    for (i = 0; i < arr->capacity; i++) {
+    for (i = 0; i < arr->size; i++) {
       if (NULL == arr->a[i])
         continue;
       arr->free(arr->a[i]);
