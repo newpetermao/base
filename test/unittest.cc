@@ -5,6 +5,7 @@
 #include "gtest/gtest.h"
 #include "config_unittest.cc"
 #include "skip_list_unittest.cc"
+#include "array_unittest.cc"
 
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
