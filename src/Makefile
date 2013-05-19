@@ -17,7 +17,7 @@ LDFLAGS = \
   -lm -lpthread -lz
 
 BASEOBJ= \
-  config.o skip_list.o array.o
+  config.o skip_list.o array.o priority_queue.o
 
 BASE_LIB= ../bin/libbase.a
 TARGET= $(BASE_LIB)
