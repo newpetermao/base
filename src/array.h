@@ -14,7 +14,7 @@ typedef struct {
 
 #define arraySize(arr) ((arr)->size)
 #define arrayCapacity(arr) ((arr)->capacity)
-#define arraySetFree(arr, free) ((arr)->free = (free))
+#define arraySetFree(arr, _free) ((arr)->free = (_free))
 
 array_t* arrayInit(size_t size);
 void arrayFree(array_t* arr);
