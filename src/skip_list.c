@@ -29,7 +29,6 @@ sl_list_t* slInit() {
 
 // free all node
 void slFree(sl_list_t* list) {
-  int level = 0;
   sl_node_t* node = NULL;
   sl_node_t* next = NULL;
 
