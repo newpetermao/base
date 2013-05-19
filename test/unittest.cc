@@ -6,6 +6,7 @@
 #include "config_unittest.cc"
 #include "skip_list_unittest.cc"
 #include "array_unittest.cc"
+#include "priority_queue_unittest.cc"
 
 int main(int argc, char **argv) {
   testing::InitGoogleTest(&argc, argv);
