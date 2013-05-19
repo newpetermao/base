@@ -90,6 +90,7 @@ void* arraySet(array_t* arr, int index, void* val) {
 /*
  * @ret  0  success
  *       -1 invalid param
+ *       -2 mem exceed
  */
 int arrayPush(array_t* arr, void* val) {
   void** tmp = NULL;
